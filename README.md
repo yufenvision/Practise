@@ -24,11 +24,11 @@ public class TestDemo1 {
 		driver.findElement(By.id("txtPassword")).sendKeys("2192168");		
 		driver.findElement(By.id("login_button")).click();
 		delay(2);
-	    driver.findElement(By.linkText("在线课程")).click();
-//	    delay(5);
-//	    driver.findElement(By.xpath("/html/body/table[1]/tbody/tr/td/div/a[1]/div[2]")).click();
-	    delay(7);
-	    try{
+	    	driver.findElement(By.linkText("在线课程")).click();
+//	    	delay(5);
+//	    	driver.findElement(By.xpath("/html/body/table[1]/tbody/tr/td/div/a[1]/div[2]")).click();
+	    	delay(7);
+	    	try{
 	    	WebDriver temDriver=driver.switchTo().frame("f_M00370003");
 	    	temDriver.findElement(By.xpath("//*[@id='tr_tblDataList_6']/td[8]/a[1]")).click();
 	    	
@@ -41,23 +41,23 @@ public class TestDemo1 {
 				}
 	    	}
 	    	ele.click();*/
-	    }catch(Exception e){
+	    	}catch(Exception e){
 	    	e.printStackTrace();
-	    }
-	    String [] handles=new String[driver.getWindowHandles().size()];
-	    System.out.println(handles.length);
-	    driver.getWindowHandles().toArray(handles);
-	    driver.switchTo().window(handles[1]);
-//	    driver.switchTo().frame("w_top");
-	    driver.switchTo().frame("w_main");
-//	    driver.switchTo().frame("w_exam_quit");
+	    	}
+	    	String [] handles=new String[driver.getWindowHandles().size()];
+	    	System.out.println(handles.length);
+	   	driver.getWindowHandles().toArray(handles);
+	    	driver.switchTo().window(handles[1]);
+//	   	driver.switchTo().frame("w_top");
+	    	driver.switchTo().frame("w_main");
+//	    	driver.switchTo().frame("w_exam_quit");
 	    
-	    delay(2);
-	    driver.findElement(By.id("spanLearnContent_71266")).click();
-	    driver.switchTo().defaultContent();//切入frame的时候，如果需要切入同级frame或上级frame，需先切换到初始状态defaultContent()
-	    driver.switchTo().frame("w_main");
-	    driver.switchTo().frame("w_code");
-	    for(int i=0;i<122;i++){
+	    	delay(2);
+	    	driver.findElement(By.id("spanLearnContent_71266")).click();
+	    	driver.switchTo().defaultContent();//切入frame的时候，如果需要切入同级frame或上级frame，需先切换到初始状态defaultContent()
+	    	driver.switchTo().frame("w_main");
+	    	driver.switchTo().frame("w_code");
+	    	for(int i=0;i<122;i++){
 	    	try{
 	    		Thread.sleep(2000);
 	    		driver.findElement(By.id("btnNext")).click();
@@ -65,10 +65,10 @@ public class TestDemo1 {
 	    	}catch(InterruptedException e){
 	    		e.printStackTrace();
 	    	}
-	    }
+	    	}
 		driver.quit();
 		System.out.println("Execution successfully");
-	}
+		}
 	public static void delay(int i){
 		try{
 			Thread.sleep(i*1000);
